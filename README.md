@@ -1,20 +1,45 @@
 <div align="center">
-<img width="1200" height="475" alt="GHBanner" src="https://github.com/user-attachments/assets/0aa67016-6eaf-458a-adb2-6e31a0763ed6" />
+  <h1>🛠️ DocenTools Suite</h1>
+  <p><em>El ecosistema de micro-herramientas definitivo para potenciar la docencia en Moodle.</em></p>
 </div>
 
-# Run and deploy your AI Studio app
+---
 
-This contains everything you need to run your app locally.
+## 👨‍💻 Acerca del Proyecto
 
-View your app in AI Studio: https://ai.studio/apps/9e0279c9-a5c9-4526-a6c8-ad607fdd44df
+**DocenTools Suite** es una plataforma web procesada 100% del lado del cliente. Está diseñada con una interfaz minimalista y moderna para facilitar, optimizar y agilizar el trabajo diario de los docentes universitarios al momento de estructurar sus aulas virtuales y materiales académicos.
 
-## Run Locally
+**Créditos de Desarrollo:**  
+Desarrollado por **Junior Pari Torres**  
+_Bachiller en Ingeniería y Desarrollador Full-Stack_  
+**IDTIC - UARM**
 
-**Prerequisites:**  Node.js
+---
 
+## ✨ Características Principales
 
-1. Install dependencies:
-   `npm install`
-2. Set the `GEMINI_API_KEY` in [.env.local](.env.local) to your Gemini API key
-3. Run the app:
-   `npm run dev`
+- 📝 **Generador GIFT (Activo):** Creación intuitiva de bancos de preguntas (Opción Múltiple, Verdadero/Falso) con validación en tiempo real y exportación directa a `.txt` en formato GIFT nativo de Moodle.
+- 👥 **Armador de Grupos CSV** _(Próximamente)_
+- 📊 **Calculadora de Notas** _(Próximamente)_
+- 📑 **Armador de Rúbricas** _(Próximamente)_
+
+---
+
+## 🚀 Stack Tecnológico
+
+- **Core:** React + Vite
+- **Estado:** Redux Toolkit
+- **Formularios:** React Hook Form
+- **UI/UX:** Bootstrap 5 (Grillas) + CSS3 Custom (Variables, Flexbox) + React Icons
+
+---
+
+## ⚙️ Instalación y Uso Local
+
+Asegúrate de tener [Node.js](https://nodejs.org/) instalado en tu equipo.
+
+**1. Clonar el repositorio:**
+
+```bash
+git clone [https://github.com/MarkOs9811/DocenTools-Suite.git](https://github.com/MarkOs9811/DocenTools-Suite.git)
+```
