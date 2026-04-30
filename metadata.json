@@ -1,0 +1,6 @@
+{
+  "name": "EduAI Suite",
+  "description": "Repositorio de mini-aplicaciones para docentes universitarios en Moodle. Incluye generador de preguntas GIFT y herramientas de productividad.",
+  "requestFramePermissions": [],
+  "majorCapabilities": []
+}

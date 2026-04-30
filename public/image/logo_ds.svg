@@ -1,0 +1,23 @@
+<svg width="512" height="512" viewBox="0 0 512 512" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- 
+    ISOTIPO: DocenTools Suite 
+    Concepto: Hub Modular / App Drawer / Expansión
+  -->
+  
+  <!-- App 1 (Herramienta Base 1) -->
+  <rect x="76" y="76" width="160" height="160" rx="48" fill="#2E3138" />
+  
+  <!-- App 2 (Herramienta Principal/Activa) -->
+  <rect x="276" y="76" width="160" height="160" rx="48" fill="#E94C47" />
+  
+  <!-- App 3 (Herramienta Base 2) -->
+  <rect x="76" y="276" width="160" height="160" rx="48" fill="#2E3138" />
+  
+  <!-- El símbolo '+' (Representa la "Suite", la suma de herramientas y la escalabilidad) -->
+  <g>
+    <!-- Barra vertical del + -->
+    <rect x="332" y="276" width="48" height="160" rx="24" fill="#00B050" />
+    <!-- Barra horizontal del + -->
+    <rect x="276" y="332" width="160" height="48" rx="24" fill="#00B050" />
+  </g>
+</svg>
