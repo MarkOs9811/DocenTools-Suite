@@ -3,6 +3,7 @@ import Topbar from "../components/ui/Topbar";
 import FormularioGIFT from "../components/GeneradorGIFT/FormularioGIFT";
 import ListaPreguntas from "../components/GeneradorGIFT/ListaPreguntas";
 import PreviewPregunta from "../components/GeneradorGIFT/PreviewPregunta";
+import "../css/AppGeneradorGIFT.css";
 import { HiOutlineChevronLeft } from "react-icons/hi";
 import { useNavigate } from "react-router-dom";
 
@@ -20,8 +21,8 @@ const AppGeneradorGIFT = () => {
         >
           <HiOutlineChevronLeft /> Volver al Dashboard
         </button>
-        <span className="small text-muted fw-bold">
-          HERRAMIENTA: GENERADOR GIFT
+        <span className="small  text-dark fw-bold p-2 fs-5">
+          Generador GIFT - Banco de Preguntas
         </span>
       </div>
 

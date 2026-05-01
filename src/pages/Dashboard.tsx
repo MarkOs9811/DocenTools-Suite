@@ -1,8 +1,8 @@
-import React from "react";
 import { useSelector } from "react-redux";
 import { RootState } from "../slices/store";
 import Topbar from "../components/ui/Topbar";
 import CardApp from "../components/ui/CardApp";
+import "../css/Dashboard.css";
 import {
   HiOutlinePencilAlt,
   HiOutlineUserGroup,
@@ -78,7 +78,7 @@ const Dashboard = () => {
   return (
     <div>
       <Topbar />
-      <div className="container-fluid">
+      <div className="container">
         <div className="row mt-4">
           <div className="col-12 text-center mb-4">
             <h1 className="fw-bold display-6">Selecciona una herramienta</h1>

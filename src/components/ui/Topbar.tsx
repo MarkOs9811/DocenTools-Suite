@@ -1,4 +1,4 @@
-import React from "react";
+import "../../css/Topbar.css";
 import { HiOutlineSearch } from "react-icons/hi";
 import { useDispatch, useSelector } from "react-redux";
 import { setSearchQuery } from "../../slices/giftSlice";
