@@ -12,7 +12,11 @@ const Topbar = () => {
   return (
     <nav className="topbar">
       <Link to="/" className="logo">
-        <img className="img-logo" src="/public/image/logo_ds.svg" />
+        <img
+          className="img-logo"
+          src="/image/logo_ds.svg"
+          alt="Logo DocenTools"
+        />
         DocenTools <span className="fw-normal">Suite</span>
       </Link>
 
