@@ -20,7 +20,7 @@ const Dashboard = () => {
   const apps = [
     {
       id: "gift",
-      title: "Generador GIFT",
+      title: "Generador de Banco Preguntas",
       description:
         "Crea archivos de preguntas GIFT para importar directamente en bancos de preguntas de Moodle de forma visual.",
       icon: HiOutlinePencilAlt,
