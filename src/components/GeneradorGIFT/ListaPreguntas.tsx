@@ -7,6 +7,8 @@ import {
   HiOutlineTrash,
   HiOutlineCheckCircle,
   HiOutlineExclamationCircle,
+  HiOutlinePlus,
+  HiOutlineEye, // <-- Icono de ojito
 } from "react-icons/hi";
 
 const ListaPreguntas = () => {
@@ -33,6 +35,7 @@ const ListaPreguntas = () => {
       </div>
     );
   }
+
   const handleExportGIFT = () => {
     if (questions.length === 0) return;
 
@@ -85,7 +88,21 @@ const ListaPreguntas = () => {
 
   return (
     <div className="modern-card p-4 h-100 d-flex flex-column">
-      <h3 className="h5 fw-bold mb-4">Historial ({questions.length})</h3>
+      {/* --- CABECERA CON EL PRIMER BOTÓN --- */}
+      <div className="d-flex justify-content-between align-items-center mb-4">
+        <h3 className="h5 fw-bold mb-0">Historial ({questions.length})</h3>
+
+        <button
+          type="button"
+          onClick={() => dispatch(setActiveQuestion(null))}
+          className="btn btn-sm btn-dark d-flex align-items-center gap-1 fw-bold border-2"
+          style={{ borderRadius: "var(--radius)" }}
+          title="Crear nueva pregunta"
+        >
+          <HiOutlinePlus size={18} /> Nueva Pregunta
+        </button>
+      </div>
+      {/* ---------------------------------- */}
 
       <div className="scroll-area flex-grow-1">
         {questions.map((q) => {
@@ -95,8 +112,7 @@ const ListaPreguntas = () => {
           return (
             <div
               key={q.id}
-              onClick={() => dispatch(setActiveQuestion(q.id))}
-              className={`modern-card question-card-item ${isActive ? "active" : ""} ${isComplete ? "completed" : "warning"}`}
+              className={`modern-card question-card-item ${isActive ? "active" : ""} ${isComplete ? "completed" : "warning"} mb-3`}
             >
               <div className="d-flex justify-content-between align-items-start">
                 <div className="flex-grow-1">
@@ -129,10 +145,10 @@ const ListaPreguntas = () => {
                       e.stopPropagation();
                       dispatch(setActiveQuestion(q.id));
                     }}
-                    className="btn btn-sm btn-light p-1 border"
-                    title="Editar"
+                    className="btn btn-sm btn-light p-1 border d-flex align-items-center gap-1"
+                    title="Ver"
                   >
-                    <HiOutlinePencil size={18} />
+                    Ver <HiOutlineEye size={18} />
                   </button>
                   <button
                     type="button"
@@ -150,6 +166,20 @@ const ListaPreguntas = () => {
             </div>
           );
         })}
+
+        {/* --- SEGUNDO BOTÓN (AL FINAL DE LA LISTA) --- */}
+        <button
+          type="button"
+          onClick={() => dispatch(setActiveQuestion(null))}
+          className="btn btn-light w-100 py-3 mt-2  d-flex align-items-center justify-content-center gap-2 "
+          style={{
+            border: "2px dashed #dee2e6",
+            borderRadius: "var(--radius)",
+          }}
+        >
+          <HiOutlinePlus size={20} /> Agregar Nueva Pregunta
+        </button>
+        {/* ------------------------------------------- */}
       </div>
 
       <div className="pt-3 border-top mt-auto">
