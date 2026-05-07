@@ -62,7 +62,7 @@ export const AppRecursosVisuales: React.FC = () => {
           <HiOutlineChevronLeft /> Volver al Dashboard
         </button>
         <span className="small  text-dark fw-bold p-2 fs-5">
-          Generador GIFT - Banco de Preguntas
+          Recursos Visuales HTML
         </span>
       </div>
       <div className="container flex-grow-1 ">
