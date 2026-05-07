@@ -10,6 +10,7 @@ import {
   HiOutlineCalculator,
   HiOutlineClipboardList,
   HiOutlineDocumentText,
+  HiOutlineViewGridAdd,
 } from "react-icons/hi";
 
 const Dashboard = () => {
@@ -28,12 +29,13 @@ const Dashboard = () => {
       route: "/gift",
     },
     {
-      id: "groups",
-      title: "Armador de Grupos CSV",
+      id: "tags",
+      title: "Recursos Visuales HTML",
       description:
-        "Sube una lista de alumnos y genera grupos aleatorios u optimizados listos para subir a Moodle.",
-      icon: HiOutlineUserGroup,
-      isActive: false,
+        "Genera bloques interactivos y elementos gráficos al instante para enriquecer tu curso en Moodle.",
+      icon: HiOutlineViewGridAdd,
+      isActive: true,
+      route: "/tags",
     },
     {
       id: "comms",

@@ -6,6 +6,7 @@ import Dashboard from "./pages/Dashboard";
 import AppGeneradorGIFT from "./pages/AppGeneradorGIFT";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./css/app.css";
+import AppRecursosVisuales from "./pages/AppRecursosVisuales";
 
 export default function App() {
   return (
@@ -14,6 +15,7 @@ export default function App() {
         <Routes>
           <Route path="/" element={<Dashboard />} />
           <Route path="/gift" element={<AppGeneradorGIFT />} />
+          <Route path="/tags" element={<AppRecursosVisuales />} />
         </Routes>
       </Router>
     </Provider>
