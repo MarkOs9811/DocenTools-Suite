@@ -7,6 +7,7 @@ import AppGeneradorGIFT from "./pages/AppGeneradorGIFT";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./css/app.css";
 import AppRecursosVisuales from "./pages/AppRecursosVisuales";
+import AppMentoria from "./pages/AppMentorIa";
 
 export default function App() {
   return (
@@ -16,6 +17,7 @@ export default function App() {
           <Route path="/" element={<Dashboard />} />
           <Route path="/gift" element={<AppGeneradorGIFT />} />
           <Route path="/tags" element={<AppRecursosVisuales />} />
+          <Route path="/mentorIa" element={<AppMentoria />} />
         </Routes>
       </Router>
     </Provider>

@@ -38,12 +38,13 @@ const Dashboard = () => {
       route: "/tags",
     },
     {
-      id: "comms",
-      title: "Plantillero de Comunicaciones",
+      id: "mentor",
+      title: "MentorIA",
       description:
-        "Genera comunicados institucionales y notificaciones masivas para tus alumnos con inteligencia artificial.",
+        "Genera prompts educativos personalizados según los criterios, objetivos y necesidades que indiques.",
       icon: HiOutlineChatAlt,
-      isActive: false,
+      isActive: true,
+      route: "/mentorIa",
     },
     {
       id: "calc",
