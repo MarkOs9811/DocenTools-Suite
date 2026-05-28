@@ -11,7 +11,7 @@ const AppGeneradorGIFT = () => {
   const navigate = useNavigate();
 
   return (
-    <div className="vh-100 d-flex flex-column">
+    <div className="vh-100 d-flex flex-column mb-4">
       <Topbar />
 
       <div className="px-4 py-2 border-bottom bg-white d-flex align-items-center justify-content-between">
@@ -26,7 +26,7 @@ const AppGeneradorGIFT = () => {
         </span>
       </div>
 
-      <div className="container flex-grow-1 overflow-hidden">
+      <div className="container flex-grow-1 ">
         <div className="row h-100 g-3 py-3">
           {/* Column 1: Form */}
           <div className="col-12 col-xl-4 h-100">

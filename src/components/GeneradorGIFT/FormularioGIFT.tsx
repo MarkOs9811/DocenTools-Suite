@@ -21,6 +21,7 @@ interface FormData {
   title: string;
   statement: string;
   type: "multiple_choice" | "true_false";
+  generalFeedback: string;
   options: { text: string; feedback: string; isCorrect: boolean }[];
 }
 
@@ -38,6 +39,7 @@ const FormularioGIFT = () => {
         title: "",
         statement: "",
         type: "multiple_choice",
+        generalFeedback: "", // <-- Nuevo valor inicial
         options: [{ text: "", feedback: "", isCorrect: false }],
       },
     });
@@ -55,6 +57,7 @@ const FormularioGIFT = () => {
         title: activeQuestion.title,
         statement: activeQuestion.statement,
         type: activeQuestion.type,
+        generalFeedback: activeQuestion.generalFeedback || "", // <-- Cargar dato al editar
         options: activeQuestion.options.map((opt) => ({
           text: opt.text,
           feedback: opt.feedback,
@@ -66,6 +69,7 @@ const FormularioGIFT = () => {
         title: "",
         statement: "",
         type: "multiple_choice",
+        generalFeedback: "", // <-- Resetear dato
         options: [{ text: "", feedback: "", isCorrect: false }],
       });
     }
@@ -106,6 +110,7 @@ const FormularioGIFT = () => {
       title: data.title,
       statement: data.statement,
       type: data.type,
+      generalFeedback: data.generalFeedback, // <-- Aquí guardamos la retroalimentación general
       options: data.options.map((opt) => ({
         ...opt,
         id: uuidv4(),
@@ -126,6 +131,7 @@ const FormularioGIFT = () => {
       title: "",
       statement: "",
       type: "multiple_choice",
+      generalFeedback: "",
       options: [{ text: "", feedback: "", isCorrect: false }],
     });
     dispatch(setActiveQuestion(null));
@@ -282,7 +288,19 @@ const FormularioGIFT = () => {
               </div>
             );
           })}
-
+          {/* Agrega esto debajo de la sección de 'options' y antes del div del botón de submit */}
+          <div className="mb-3 mt-3 pt-3 border-top border-light">
+            <label className="label-modern small opacity-75">
+              Retroalimentación General de la Pregunta
+            </label>
+            <textarea
+              {...register("generalFeedback")}
+              className="input-modern p-2 w-100"
+              rows={2}
+              placeholder="Escribe la retroalimentación general aquí (opcional)..."
+              style={{ resize: "none" }}
+            />
+          </div>
           {questionType === "multiple_choice" && (
             <button
               type="button"

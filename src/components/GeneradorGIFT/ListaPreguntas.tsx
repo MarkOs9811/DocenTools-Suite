@@ -63,13 +63,18 @@ const ListaPreguntas = () => {
         // En Moodle GIFT: '=' es correcta, '~' es incorrecta
         const prefix = opt.isCorrect ? "=" : "~";
         // Si hay feedback, se pone un '#' después de la opción
-        const feedback = opt.feedback ? `#${opt.feedback.trim()}` : "";
+        const feedback = opt.feedback ? ` #${opt.feedback.trim()}` : "";
 
         // Evitamos exportar opciones vacías que el profe haya dejado por accidente
         if (opt.text && opt.text.trim() !== "") {
           giftText += `\t${prefix}${opt.text.trim()}${feedback}\n`;
         }
       });
+
+      // 👇 NUEVA LÓGICA: Retroalimentación general de la pregunta 👇
+      if (q.generalFeedback && q.generalFeedback.trim() !== "") {
+        giftText += `\t####${q.generalFeedback.trim()}\n`;
+      }
 
       giftText += "}\n\n"; // Cierre de la pregunta y salto de línea para la siguiente
     });

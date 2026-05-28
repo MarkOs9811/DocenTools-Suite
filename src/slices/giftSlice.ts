@@ -1,4 +1,4 @@
-import { createSlice, PayloadAction } from '@reduxjs/toolkit';
+import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 
 export interface Option {
   id: string;
@@ -11,7 +11,8 @@ export interface Question {
   id: string;
   title: string;
   statement: string;
-  type: 'multiple_choice' | 'true_false';
+  generalFeedback?: string; // <-- Agrega esta línea (opcional)
+  type: "multiple_choice" | "true_false";
   options: Option[];
   createdAt: number;
 }
@@ -25,11 +26,11 @@ interface GiftState {
 const initialState: GiftState = {
   questions: [],
   activeQuestionId: null,
-  searchQuery: '',
+  searchQuery: "",
 };
 
 const giftSlice = createSlice({
-  name: 'gift',
+  name: "gift",
   initialState,
   reducers: {
     addQuestion: (state, action: PayloadAction<Question>) => {
@@ -37,32 +38,40 @@ const giftSlice = createSlice({
       state.activeQuestionId = action.payload.id;
     },
     updateQuestion: (state, action: PayloadAction<Question>) => {
-      const index = state.questions.findIndex(q => q.id === action.payload.id);
+      const index = state.questions.findIndex(
+        (q) => q.id === action.payload.id,
+      );
       if (index !== -1) {
         state.questions[index] = action.payload;
       }
     },
     deleteQuestion: (state, action: PayloadAction<string>) => {
-      state.questions = state.questions.filter(q => q.id !== action.payload);
+      state.questions = state.questions.filter((q) => q.id !== action.payload);
       if (state.activeQuestionId === action.payload) {
-        state.activeQuestionId = state.questions.length > 0 ? state.questions[0].id : null;
+        state.activeQuestionId =
+          state.questions.length > 0 ? state.questions[0].id : null;
       }
     },
     setActiveQuestion: (state, action: PayloadAction<string | null>) => {
       state.activeQuestionId = action.payload;
     },
-    setCorrectAnswer: (state, action: PayloadAction<{ questionId: string; optionId: string }>) => {
-      const question = state.questions.find(q => q.id === action.payload.questionId);
+    setCorrectAnswer: (
+      state,
+      action: PayloadAction<{ questionId: string; optionId: string }>,
+    ) => {
+      const question = state.questions.find(
+        (q) => q.id === action.payload.questionId,
+      );
       if (question) {
-        if (question.type === 'true_false') {
-          question.options = question.options.map(opt => ({
+        if (question.type === "true_false") {
+          question.options = question.options.map((opt) => ({
             ...opt,
-            isCorrect: opt.id === action.payload.optionId
+            isCorrect: opt.id === action.payload.optionId,
           }));
         } else {
-          question.options = question.options.map(opt => ({
+          question.options = question.options.map((opt) => ({
             ...opt,
-            isCorrect: opt.id === action.payload.optionId
+            isCorrect: opt.id === action.payload.optionId,
           }));
         }
       }
@@ -73,13 +82,13 @@ const giftSlice = createSlice({
   },
 });
 
-export const { 
-  addQuestion, 
-  updateQuestion, 
-  deleteQuestion, 
-  setActiveQuestion, 
+export const {
+  addQuestion,
+  updateQuestion,
+  deleteQuestion,
+  setActiveQuestion,
   setCorrectAnswer,
-  setSearchQuery 
+  setSearchQuery,
 } = giftSlice.actions;
 
 export default giftSlice.reducer;

@@ -13,12 +13,15 @@ export default function App() {
   return (
     <Provider store={store}>
       <Router>
-        <Routes>
-          <Route path="/" element={<Dashboard />} />
-          <Route path="/gift" element={<AppGeneradorGIFT />} />
-          <Route path="/tags" element={<AppRecursosVisuales />} />
-          <Route path="/mentorIa" element={<AppMentoria />} />
-        </Routes>
+        {/* El div contenedor se coloca por fuera de las Rutas */}
+        <div className="container-fluid p-0 pb-5">
+          <Routes>
+            <Route path="/" element={<Dashboard />} />
+            <Route path="/gift" element={<AppGeneradorGIFT />} />
+            <Route path="/tags" element={<AppRecursosVisuales />} />
+            <Route path="/mentorIa" element={<AppMentoria />} />
+          </Routes>
+        </div>
       </Router>
     </Provider>
   );
